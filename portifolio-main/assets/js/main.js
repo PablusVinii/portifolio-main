@@ -45,7 +45,7 @@ function onScroll() {
   activateMenuAtCurrentSection(education);
   activateMenuAtCurrentSection(knowledge);
   activateMenuAtCurrentSection(softSkills);
-  activateMenuAtCurrentSection(languages);
+  activateMenuAtCurrentSection(resume); // Adicionada a seção resume
   activateMenuAtCurrentSection(contact);
 }
 
@@ -135,9 +135,10 @@ ScrollReveal({
   #soft-skills,
   #soft-skills header,
   #soft-skills .skills-list li,
-  #languages,
-  #languages header,
-  #languages .languages-list li,
+  #resume,                /* Adicionada a seção resume */
+  #resume header,
+  #resume .content p,
+  #resume .button,
   #contact,
   #contact header`
 );
