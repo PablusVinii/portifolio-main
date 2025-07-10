@@ -6,6 +6,18 @@ const backToTopButton = document.querySelector("#backToTopButton");
 const toggle = document.querySelector("#sw-checkbox");
 const projectsSection = document.querySelector("#projects .wrapper");
 
+// Adicionando referências para as novas seções para activateMenuAtCurrentSection
+const experience = document.querySelector("#experience");
+const education = document.querySelector("#education");
+const knowledge = document.querySelector("#knowledge");
+const softSkills = document.querySelector("#soft-skills");
+const resume = document.querySelector("#resume");
+// 'about' e 'contact' provavelmente já são selecionados ou não precisam ser se não existirem no HTML original com esses IDs para a função.
+// Se 'about' e 'contact' são IDs de seções, eles precisam ser definidos como constantes também.
+const about = document.querySelector("#about");
+const contact = document.querySelector("#contact");
+
+
 const notebook_1 = document.querySelector("#notebook-1");
 const notebook_2 = document.querySelector("#notebook-2");
 const notebook_2_white = document.querySelector("#notebook-2-white");
@@ -143,6 +155,12 @@ ScrollReveal({
   #contact header`
 );
 
-toggle.addEventListener("change", () => {
-  document.body.classList.toggle("light-mode");
-});
+if (toggle) {
+  toggle.addEventListener("change", () => {
+    console.log("Toggle mudou. Estado checked:", toggle.checked);
+    document.body.classList.toggle("light-mode");
+    console.log("Classes do body:", document.body.className);
+  });
+} else {
+  console.error("Elemento #sw-checkbox não encontrado.");
+}
