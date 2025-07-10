@@ -41,11 +41,17 @@ function onScroll() {
 
   activateMenuAtCurrentSection(about);
   activateMenuAtCurrentSection(projects);
+  activateMenuAtCurrentSection(experience);
+  activateMenuAtCurrentSection(education);
   activateMenuAtCurrentSection(knowledge);
+  activateMenuAtCurrentSection(softSkills);
+  activateMenuAtCurrentSection(languages);
   activateMenuAtCurrentSection(contact);
 }
 
 function activateMenuAtCurrentSection(section) {
+  if (!section) return; // Adiciona verificação para seção nula ou indefinida
+
   const targetLine = scrollY + innerHeight / 2;
   const sectionTop = section.offsetTop;
   const sectionHeight = section.offsetHeight;
@@ -119,7 +125,19 @@ ScrollReveal({
   #projects .card,
   #knowledge,
   #knowledg header,
-  #knowledg .card,
+  #knowledg .skills-category, /* Atualizado de .card para .skills-category */
+  #experience,
+  #experience header,
+  #experience .timeline-item,
+  #education,
+  #education header,
+  #education .education-item,
+  #soft-skills,
+  #soft-skills header,
+  #soft-skills .skills-list li,
+  #languages,
+  #languages header,
+  #languages .languages-list li,
   #contact,
   #contact header`
 );
