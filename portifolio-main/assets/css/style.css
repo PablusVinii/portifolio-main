@@ -985,6 +985,7 @@ body.light-mode #soft-skills .skills-list li {
   background-color: var(--primary-color); /* Destaque no botão */
   color: #fff; /* Texto branco para contraste */
   border: none;
+  margin-inline: auto; /* Adicionado para centralizar o botão */
 }
 
 body.light-mode #resume .button.resume-button {
@@ -1211,6 +1212,40 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
 #toggle input:checked + label::before {
   transform: translateX(3.8rem);
 }
+
+/* Mostrar/Esconder SVGs do toggle baseado no tema */
+/* Por padrão (dark mode), mostrar o ícone da lua (primeiro SVG) e esconder o sol (segundo SVG) */
+#toggle label svg:nth-of-type(1) {
+  display: block;
+  fill: var(--primary-color); /* Cor do ícone no modo escuro */
+}
+#toggle label svg:nth-of-type(2) {
+  display: none;
+}
+
+/* Quando o input está checado (light mode), mostrar o ícone do sol e esconder a lua */
+#toggle input:checked + label svg:nth-of-type(1) {
+  display: none;
+}
+#toggle input:checked + label svg:nth-of-type(2) {
+  display: block;
+  fill: var(--primary-color); /* Cor inicial do ícone no modo claro */
+}
+
+/* Ajustar cores dos ícones no light-mode usando a classe no body */
+body.light-mode #toggle label svg:nth-of-type(2) { /* Sol no light mode - deve estar visível */
+  fill: var(--primary-hover); /* Cor do ícone no modo claro */
+}
+
+/* Ajustar a cor de fundo do label e do círculo no light mode */
+body.light-mode #toggle label {
+  border-color: var(--primary-hover);
+}
+
+body.light-mode #toggle label::before {
+  background-color: var(--primary-hover);
+}
+
 
 /*===== BACK TO TOP BUTTON =====================================*/
 
